@@ -27,7 +27,7 @@ Method 2:
 - Navigate to index.html and open in the browser to see the output.
 
 ## Output
-![Output](https://github.com/VAJRESH/Hexagon-Patterns/output.png)
+![Output](https://github.com/VAJRESH/Hexagon-Patterns/blob/master/output.png)
 
 ## Technologies Used
 - HTML
