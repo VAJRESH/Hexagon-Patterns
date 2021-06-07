@@ -1,0 +1,52 @@
+main{
+    display: flex;
+    --size: 100px;
+    --margin: 4px; 
+    --f: calc(1.732 * var(--size) + 4 * var(--margin)  - 1px);
+}
+
+.container{
+    font-size: 0;
+}
+
+.container div{
+    width: var(--size);
+    margin: var(--margin);
+    background-color: red;
+    height: calc(var(--size) * 1.1547);
+    position: relative;
+    display: inline-block;
+    font-size: inherit;
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+    margin-bottom: calc(var(--margin) - var(--size)*0.2885); 
+    /* transition: background-color 2s ease-out; */
+}
+.container::before{
+    content: "";
+    width: calc(var(--size)/2 + var(--margin));
+    height: 120%;
+    float: left;
+    shape-outside: repeating-linear-gradient(     
+                     #0000 0 calc(var(--f) - 3px),      
+                     #000  0 var(--f));
+                    }
+.container div:nth-child(odd) {
+    background:green;
+}
+
+/* https://stackoverflow.com/questions/31854185/how-to-add-border-in-my-clip-path-polygon-css-style */
+/* makes the polygon with only border */
+/* .container div::before{
+    content: "";
+    height: calc(var(--size) * 1.1547 - 10px);
+    width: calc(var(--size) - 10px);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: #fff;
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+} */
+.container div:hover{
+    background-color: aqua;
+    /* border: 1px solid transparent; */
+}
